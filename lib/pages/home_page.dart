@@ -17,8 +17,8 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          const BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
+          const BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),
       body: SafeArea(
@@ -123,7 +123,11 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 color: Colors.grey[100],
                 child: Padding(
-                  padding: const EdgeInsets.all(25.0),
+                  padding: const EdgeInsets.only(
+                    top: 25.0,
+                    left: 25.0,
+                    right: 25.0,
+                  ),
                   child: Column(
                     children: [
                       // Exercises heading
@@ -137,19 +141,41 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       // ListView of exercises
-                      const SizedBox(height: 25),
+                      const SizedBox(height: 15),
 
-                      ExerciseTile(
-                          title: 'Speaking skills',
-                          subtitle: '16 Exercises',
-                          icon: Icons.favorite,
-                          color: Colors.orange[500]!),
-                      const SizedBox(height: 20),
-                      ExerciseTile(
-                          title: 'Reading skills',
-                          subtitle: '8 Exercises',
-                          icon: Icons.person_rounded,
-                          color: Colors.blue[500]!),
+                      Expanded(
+                        child: ListView(
+                          // shrinkWrap: true,
+
+                          children: [
+                            ExerciseTile(
+                                exerciseName: 'Speaking skills',
+                                numberOfExercises: 16,
+                                icon: Icons.favorite,
+                                color: Colors.orange[500]!),
+                            ExerciseTile(
+                                exerciseName: 'Reading skills',
+                                numberOfExercises: 9,
+                                icon: Icons.person_rounded,
+                                color: Colors.blue[500]!),
+                            const ExerciseTile(
+                                exerciseName: 'Writing skills',
+                                numberOfExercises: 2,
+                                icon: Icons.star,
+                                color: Colors.pink),
+                            const ExerciseTile(
+                                exerciseName: 'Memorizing skills',
+                                numberOfExercises: 6,
+                                icon: Icons.hourglass_bottom,
+                                color: Colors.green),
+                            ExerciseTile(
+                                exerciseName: 'Reading skills',
+                                numberOfExercises: 19,
+                                icon: Icons.person_rounded,
+                                color: Colors.blue[500]!),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
