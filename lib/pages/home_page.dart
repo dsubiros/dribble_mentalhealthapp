@@ -1,3 +1,4 @@
+import 'package:dribble_mentalhealthapp/widgets/emoticon_face.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,17 +18,31 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(25),
           child: Column(
             children: [
-              // Hi Jared!
+              // Greetings row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Hi, Jared!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Hi, Jared!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        '23 Jan, 2021',
+                        style: TextStyle(
+                          color: Colors.blue[200],
+                          // fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
                   // Notifications
                   Container(
@@ -42,6 +57,66 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+              const SizedBox(height: 20.0), // Search bar
+
+              Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                    color: Colors.blue[600],
+                    borderRadius: BorderRadius.circular(12.0)),
+                child: const Row(
+                  children: [
+                    Icon(Icons.search, color: Colors.white),
+                    SizedBox(width: 5.0),
+                    Text('Search', style: TextStyle(color: Colors.white)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 25.0),
+
+              // How do you feel?
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'How do you feel?',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Icon(Icons.more_horiz, color: Colors.white),
+                ],
+              ),
+
+              const SizedBox(height: 25),
+              // 4 different faces
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  // Bad
+                  EmoticonFace(
+                    face: '😢',
+                    text: 'Bad',
+                  ),
+                  // Fine
+                  EmoticonFace(
+                    face: '😊',
+                    text: 'Fine',
+                  ),
+                  // Well
+                  EmoticonFace(
+                    face: '😄',
+                    text: 'Well',
+                  ),
+                  // Excellent
+                  EmoticonFace(
+                    face: '😂',
+                    text: 'Excellent',
+                  ),
+                ],
+              )
             ],
           ),
         ),
