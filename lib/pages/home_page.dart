@@ -96,25 +96,13 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   // Bad
-                  EmoticonFace(
-                    face: '😢',
-                    text: 'Bad',
-                  ),
+                  EmoticonFace(face: '😢', text: 'Bad'),
                   // Fine
-                  EmoticonFace(
-                    face: '😊',
-                    text: 'Fine',
-                  ),
+                  EmoticonFace(face: '😊', text: 'Fine'),
                   // Well
-                  EmoticonFace(
-                    face: '😄',
-                    text: 'Well',
-                  ),
+                  EmoticonFace(face: '😄', text: 'Well'),
                   // Excellent
-                  EmoticonFace(
-                    face: '😂',
-                    text: 'Excellent',
-                  ),
+                  EmoticonFace(face: '😂', text: 'Excellent'),
                 ],
               )
             ],
